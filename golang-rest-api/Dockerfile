@@ -3,7 +3,7 @@
 FROM  golang:1.12.7
 
 # Info
-LABEL maintainer="Phong Vo <phongvxk38@gmail.com>"
+LABEL maintainer="Dustin"
 
 # Set the Current Working Directory inside the container
 WORKDIR /app

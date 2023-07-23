@@ -14,5 +14,5 @@ func main() {
 
 	var e = float32(10.5);
 	fmt.Printf("e=%f\n", e);
-	// fmt.Scanf("Pause");
+	fmt.Scanf("Pause");
 }

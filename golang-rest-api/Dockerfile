@@ -3,7 +3,7 @@
 FROM  golang:1.12.7
 
 # Info
-LABEL maintainer="Dustin"
+LABEL maintainer="Phong Vo <phongvxk38@gmail.com>"
 
 # Set the Current Working Directory inside the container
 WORKDIR /app
@@ -25,4 +25,5 @@ EXPOSE 5000
 
 # Run the binary program produced by `go install`
 CMD ["./main"]
+
 

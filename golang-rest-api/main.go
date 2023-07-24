@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"net/http"
-
 	"github.com/PhongVX/golang-rest-api/apis/userapi"
 	"github.com/gorilla/mux"
 )

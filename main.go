@@ -4,7 +4,12 @@ import (
 	"fmt" 
 	"os"
 	"time"
+	"sync"
 )
+
+var count_on = 0
+var count_off = 0
+var m sync.Mutex
 
 
 func get_sum(i int) int {
@@ -67,8 +72,33 @@ type Server struct {
 }
 
 func hello(i int) {
+	
 	fmt.Printf("Hello, world! %d \n", i)
+	if i % 2 == 1 {
+		count_on += 1
+	} else {
+		count_off += 1
+	}
 }
+
+var channel = make(chan int)
+
+func setChannel(i int) {
+	if i % 2 == 1 {
+		channel <- i
+	} else {
+		a :=  <- channel
+		fmt.Println(a)
+	}
+}
+
+func getTimer() {
+	for {
+        fmt.Println("https://gosamples.dev is the best")
+        time.Sleep(1 * time.Second)
+    }
+}
+
 
 func main () {
 	// server1 := Server{
@@ -92,10 +122,26 @@ func main () {
 	// }
 	
 	// server1.PrintServer()
-	
-	for i:=0; i<10; i++ {
-		go hello(i)
-	}
+	// m.Lock()
+	// for i:=0; i<100; i++ {
+	// 	go hello(i)
+	// }
+	// m.Unlock()
 
-	time.Sleep(50000)
+	// // time.Sleep(10)
+	// fmt.Println(count_on)
+	// fmt.Println(count_off)
+
+	// go setChannel(1)
+	// for i:=0; i<1000000; i++ {
+	// 	// go setChannel(i)
+	// 	fmt.Println("Tick")
+	// 	time.Sleep(1)
+	// }
+
+	go getTimer()
+
+	time.Sleep(10)
+	
+	fmt.Println("Hello, world!")
 }

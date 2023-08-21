@@ -1,0 +1,10 @@
+{
+    "origin": "golangdocs.com",
+    "user": "Vijay",
+    "active": true,
+    "list": [
+        "item1",
+        "item2",
+        "item3"
+    ]
+}

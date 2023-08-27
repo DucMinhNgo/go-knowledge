@@ -1,0 +1,7 @@
+{
+    "ServerName": "server2",
+    "ServerPort": "5002",
+    "ServerVersion": 0,
+    "CurrentData": 0,
+    "ConfigPath": "../conf.json"
+}
